@@ -1,0 +1,19 @@
+### Configurações do Banco de Dados
+
+#### Tabela `users`
+- `id`: ID único do usuário.
+- `username`: Nome de usuário único.
+- `email`: Email único.
+- `hashed_password`: Senha criptografada.
+- `cpf`: CPF único.
+- `balance`: Saldo inicial em GC$.
+- `created_at`: Data de criação do registro.
+- `updated_at`: Data da última atualização do registro.
+
+#### Trigger `set_updated_at`
+- Atualiza automaticamente o campo `updated_at` sempre que um registro na tabela `users` for modificado.
+
+#### Backup do Banco de Dados
+- Para criar um backup:
+  ```bash
+  pg_dump -U admin -d gamepixbr -F c > gamepixbr_backup.sql
